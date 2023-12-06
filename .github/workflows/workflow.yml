@@ -91,7 +91,7 @@ jobs:
             npm install
 
       - name: 'Azure Load Testing'
-        uses: azure/load-testing@v1
+        uses: ./load-testing@your-branch
         with:
           loadTestConfigFile: 'test/config.yml'
           loadTestResource: ${{ env.LOAD_TEST_RESOURCE }}
