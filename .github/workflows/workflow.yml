@@ -85,15 +85,12 @@ jobs:
 #           resourceGroupName: ${{ env.LOAD_TEST_RESOURCE_GROUP }}
 #           template: ./ARMTemplate/template.json
 #           parameters: ./ARMTemplate/parameters.json name=${{ env.LOAD_TEST_RESOURCE }} location="${{ env.LOCATION }}"
-      - name : 'Install dependencies'
-        run: |
-            npm install
 
       - name: 'Azure Load Testing'
-        uses: ./load-testing@your-branch
+        uses: Azure/load-testing@v1
         with:
           loadTestConfigFile: 'test/config.yml'
-          loadTestResource: ${{ env.LOAD_TEST_RESOURCE }}
+          # loadTestResource: ${{ env.LOAD_TEST_RESOURCE }}
           resourceGroup: ${{ env.LOAD_TEST_RESOURCE_GROUP }}
           env: |
             [
