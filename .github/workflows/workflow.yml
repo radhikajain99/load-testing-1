@@ -17,7 +17,11 @@ env:
   LOCATION: "East US"
   APPINSIGHTLOCATION: "West US"
   DATABASEACCOUNTLOCATION: "westus"
-
+  
+permissions:
+  id-token: write # This is required for requesting the JWTcontents: read  # This is required for actions/checkout
+  contents : read
+  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 #   build-and-deploy:
@@ -95,6 +99,7 @@ jobs:
           loadTestConfigFile: 'SampleApp.yaml'
           loadTestResource: ${{ env.LOAD_TEST_RESOURCE }}
           resourceGroup: ${{ env.LOAD_TEST_RESOURCE_GROUP }}
+          
       
       - uses: actions/upload-artifact@v2
         with:
