@@ -65,7 +65,7 @@ jobs:
   loadTest:
     name: Load Test
 #     needs: build-and-deploy
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout GitHub Actions 
         uses: actions/checkout@v2
