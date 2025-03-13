@@ -6,6 +6,7 @@ import * as fs from 'fs';
 import { isNullOrUndefined } from 'util';
 import {TestType} from "./mappers";
 
+
 const resultFolder = 'loadTest';
 let baseURL = '';
 const httpClient: httpc.HttpClient = new httpc.HttpClient('MALT-GHACTION');
