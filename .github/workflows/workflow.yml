@@ -104,7 +104,7 @@ jobs:
           resourceGroup: ${{ env.LOAD_TEST_RESOURCE_GROUP }}
           
       
-      - uses: actions/upload-artifact@v2
-        with:
-          name: loadTestResults
-          path: ${{ github.workspace }}/loadTest
+      # - uses: actions/upload-artifact@v2
+      #   with:
+      #     name: loadTestResults
+      #     path: ${{ github.workspace }}/loadTest
