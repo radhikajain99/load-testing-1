@@ -10,7 +10,7 @@ on:
 
 env:
   AZURE_WEBAPP_NAME: "azure.com"    # set this to your application's name
-  LOAD_TEST_RESOURCE: "mohit-1"
+  LOAD_TEST_RESOURCE: "radhika-test-eus2e"
   LOAD_TEST_RESOURCE_GROUP: "radhika-test"
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '14.15.1'                # set this to the node version to use
@@ -97,7 +97,7 @@ jobs:
 #           parameters: ./ARMTemplate/parameters.json name=${{ env.LOAD_TEST_RESOURCE }} location="${{ env.LOCATION }}"
 
       - name: 'Azure Load Testing'
-        uses: Azure/load-testing@mohit-EINVAL-issue-fix-and-report-fixes
+        uses: Azure/load-testing@1
         with:
           loadTestConfigFile: 'SampleApp.yaml'
           loadTestResource: ${{ env.LOAD_TEST_RESOURCE }}
